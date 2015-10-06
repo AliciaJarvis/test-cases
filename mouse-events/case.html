@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Mouse events test case</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/basic.css">
+	</head>
+
+	<body>
+	<h1>Mouse events test case</h1>
+
+	<p>The button on this page is a <code>&lt;div&gt;</code> with <code>role=&quot;button&quot;</code>, with a <code>click</code> event listener.</p>
+
+	<p>By default, the Jaws screen reader simulates a mouse click whenever the enter or space keys are used to activate a control. The "Link activation" setting can be set to "send enter key" instead, but this setting does not affect the behaviour of the space key - which will always simulate a mouse click whenever it's used.</p>
+
+	<h2>Example</h2>
+
+		<div role="button" tabindex="0" id="button">Push</div>
+<p id="result"></p>
+
+		<script>
+	function handleIt() {
+document.querySelector('#result').innerHTML = "Clicked";
+	}
+
+	document.getElementById('button').addEventListener('click', handleIt);
+	</script>
+
+<h2>Example code</h2>
+
+<h3>HTML</h3>
+
+<pre><code>
+		&lt;div role=&quot;button&quot; tabindex=&quot;0&quot; id=&quot;button&quot;&gt;Push&lt;/div&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+</code></pre>
+
+<h3>JavaScript</h3>
+
+<pre><code>
+	function handleIt() {
+document.querySelector('#result').innerHTML = "Clicked";
+	}
+
+	document.getElementById('button').addEventListener('click', handleIt);
+</code></pre>
+
+</body>
+</html>

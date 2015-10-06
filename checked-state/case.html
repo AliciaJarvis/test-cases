@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<title>Checked state test case</title>
+
+<link rel="stylesheet" type="text/css" href="../css/basic.css">
+<script type="text/javascript" src="js/checked.js"></script>
+</head>
+
+<body>
+<h1>Checked state test case</h1>
+
+<p>The examples on this page use the <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-input-element"><code>&lt;input&gt;</code></a> element with <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#checkbox-state-%28type=checkbox%29"><code>type=&quot;checkbox&quot;</code></a> to test the way the <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#attr-input-checked">checked</a> and <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#dom-input-indeterminate">indeterminate</a> states are reported by screen readers.</p>
+
+<h2>Unchecked state</h2>
+
+<div id="example">
+<input type="checkbox" id="unchecked" /> <label for="unchecked">Lorem ipsum</label>
+</div>
+
+<h3>Example code</h3>
+<pre>
+<code>
+&lt;input type=&quot;checkbox&quot; id=&quot;unchecked&quot;&gt;
+&lt;label for=&quot;unchecked&quot;&gt;Lorem ipsum&lt;/label&gt;
+</code>
+</pre>
+
+<h2>Checked state</h2>
+
+<div id="example">
+<input type="checkbox" id="checked" checked="checked" /> <label for="checked">Dolor</label>
+</div>
+
+<h3>Example code</h3>
+<pre>
+<code>
+&lt;input type=&quot;checkbox&quot; id=&quot;checked&quot; checked&gt;
+&lt;label for=&quot;checked&quot;&gt;Dolor&lt;/label&gt;
+</code>
+</pre>
+
+<h2>Indeterminate state</h2>
+
+<div id="example">
+<input type="checkbox" id="indeterminate" /> <label for="indeterminate">Sit amet</label>
+</div>
+
+<h3>Example code</h3>
+<pre>
+<code>
+&lt;input type=&quot;checkbox&quot; id=&quot;indeterminate&quot;&gt;
+&lt;label for=&quot;indeterminate&quot;&gt;Sit amet&lt;/label&gt;
+</code>
+</pre>
+<pre>
+<code>
+document.getElementById(&quot;indeterminate&quot;).indeterminate=&quot;true&quot;;
+</code>
+</pre>
+
+<h2>Notes</h2>
+
+<p>The checked/unchecked state is exposed through the accessibility API in Chrome, Firefox, IE and Safari. The indeterminate state is exposed in Chrome and Firefox, but not IE or Safari.</p>
+
+<p>Jaws and NVDA announce all three states correctly in Chrome and Firefox on Windows. Window-Eyes announces all three states correctly in Firefox and IE on Windows.</p>
+
+<p>VoiceOver announces the checked/unchecked states correctly in Safari on OS X and iOS, but not the indeterminate state. TalkBack announces the checked/unchecked states correctly in Chrome on Android, but not the indeterminate state.</p>
+
+</body>
+</html>
