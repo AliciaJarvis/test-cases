@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Case: aria-owns</title>
+
+<link rel="stylesheet" type="text/css" href="../css/basic.css">
+</head>
+
+<body>
+<h1>Case: aria-owns</h1>
+
+<p>The example on this page uses the <code><a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns</a></code> attribute to establish the parent/child relationship between the two lists.</p>
+
+<h2>Example</h2>
+
+<div id="example">
+
+<div role="list">
+<div role="listitem" aria-owns="fruit">Fruit</div>
+<div role="listitem">Vegetables</div>
+</div>
+
+<div role="list" id="fruit">
+<div role="listitem">Apples</div>
+<div role="listitem">Bananas</div>
+</div>
+
+</div>
+
+<h2>Results</h2>
+
+<table>
+<caption>Browser and screen reader support for aria-owns</caption>
+
+<tr>
+<th></th>
+<th>Chrome</th>
+<th>Edge</th>
+<th>Firefox</th>
+<th>IE</th>
+<th>Safari</th>
+</tr>
+
+<tr>
+<th>Jaws</th>
+<td>Yes</td>
+<td>N/A</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<th>NVDA</th>
+<td	>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<th>VoiceOver</th>
+<td>?</td>
+<td>N/A</td>
+<td>?</td>
+<td>N/A</td>
+<td>?</td>
+</tr>
+</table>
+
+
+</body>
+</html>
