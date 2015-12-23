@@ -44,3 +44,12 @@ Foo &lt;span aria-hidden="true" class="icon"&gt;&lt;/span&gt;
 <h2>Expected results</h2>
 
 <p>The content generated with the CSS <code>after</code> selector and hidden with <code>aria-hidden</code> should not be exposed in the browser accessibility tree.</p>
+
+<h2>Results</h2>
+
+<p>The content generated with the CSS <code>after</code> selector and hidden with <code>aria-hidden</code> is exposed in Firefox's accessibility tree, when inside a <code>&lt;button&gt;</code> element.</p>
+
+<p>Last tested December 2015 in Firefox 43 x64.</p>
+
+</body>
+</html>
