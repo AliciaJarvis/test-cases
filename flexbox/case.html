@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<title>Case: Flexbox</title>
+
+<link rel="stylesheet" type="text/css" href="../css/basic.css">
+</head>
+
+<body>
+<h1>Case: Flexbox</h1>
+
+<h2>Basic HTML</h2>
+
+<div>
+<a href="/">One</a>
+<br>
+<a href="/">Two</a>
+<br>
+<a href="/">Three</a>
+</div>
+
+<h2>With flexbox</h2>
+
+<div style="display: flex;">
+<a href="/" style="order: 3;">One</a>
+<br>
+<a href="/" style="order: 2;">Two</a>
+<br>
+<a href="/" style="order: 1;">Three</a>
+</div>
+
+<h2>With flexbox and tabindex</h2>
+
+<div style="display: flex;">
+<a href="/" style="order: 3;" tabindex="3">One</a>
+<br>
+<a href="/" style="order: 2;" tabindex="2">Two</a>
+<br>
+<a href="/" style="order: 1;" tabindex="1">Three</a>
+</div>
+
+
+
+<h2>With flexbox and aria-flowto</h2>
+
+<div style="display: flex;">
+<a href="/" style="order: 3;" id="i1">One</a>
+<br>
+<a href="/" style="order: 2;" id="i2" aria-flowto="i1">Two</a>
+<br>
+<a href="/" style="order: 1;" id="i3" aria-flowto="i2">Three</a>
+</div>
+
+
+</body>
+</html>
