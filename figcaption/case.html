@@ -8,6 +8,11 @@
 <title>Case: figcaption</title>
 
 <link rel="stylesheet" type="text/css" href="../css/basic.css">
+<style>
+figcaption {
+font-style: italic;
+}
+</style>
 </head>
 
 <body>
@@ -18,34 +23,101 @@
 <blockquote cite="http://w3c.github.io/html/grouping-content.html#elementdef-figcaption">
 "As the first or last child of a figure element."</blockquote>
 
-<h2>Spec example</h2>
+<p>HTML <a href="https://github.com/w3c/html/issues/17">issue 177</a> questions whether restricting <code>&lt;figcaption&gt;</code> to the first/last child of <code>&lt;figure&gt;</code> is necessary.</p>
 
-<div class="example">
-<figure>
-<figcaption>Fig1. Latin text</figcaption>
-<p>Lorem ipsum dolor sit amet...</p>
-</figure>
-</div>
+<h2>Case 1: <code>&lt;figcaption&gt;</code> as last child of <code>&lt;figure&gt;</code></h2>
 
-<h2>Test case</h2>
+<p>This case conforms to the current HTML definition for <code>&lt;figcaption&gt;</code>.</p>
+
+<h3>Example</h3>
 
 <div class="example">
 <figure>
 <p>Lorem ipsum dolor sit amet...</p>
-<figcaption>Fig2. Latin text</figcaption>
-<p>...consectetur adipiscing</p>
+<figcaption>Fig.1 Latin text</figcaption>
 </figure>
 </div>
 
-<h2>Test code</h2>
+<h3>Code</h3>
 
 <pre><code>
 &lt;figure&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
-&lt;figcaption&gt;Fig1. Latin text&lt;/figcaption&gt;
-&lt;p&gt;...consectetur adipiscing&lt;/p&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+	&lt;figcaption&gt;Fig.1 Latin text&lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre>
+
+<h2>Case 2: <code>&lt;figcaption&gt;</code> as grandchild of <code>&lt;figure&gt;</code></h2>
+
+<p>This case does not conform with the current HTML definition for <code>&lt;figcaption&gt;</code>.</p>
+
+<h3>Example</h3>
+
+<div class="example">
+<figure>
+<p>
+Lorem Ipsum dolor sit amet...
+<figcaption>Fig.2 Latin text</figcaption>
+</p>
+</figure>
+</div>
+
+<h3>Code</h3>
+
+<pre><code>
+&lt;figure&gt;
+	&lt;p&gt;
+		Lorem Ipsum dolor sit amet...
+		&lt;figcaption&gt;Fig.2 Latin text&lt;/figcaption&gt;
+	&lt;/p&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<h2>Test criteria</h2>
+
+<ul>
+<li>Is the <code>&lt;figcaption&gt;</code> visually rendered based on its location in the DOM?</li>
+<li>Does the <code>&lt;figcaption&gt;</code> provide the accessible name for the <code>&lt;figure&gt;</code>?</li>
+</ul>
+
+<h2>Results</h2>
+
+<table>
+<caption>Results for Case 2</caption>
+
+<tr>
+<th></th>
+<th>Chrome</th>
+<th>Edge</th>
+<th>Firefox</th>
+<th>IE</th>
+<th>Opera</th>
+<th>Safari</th>
+<th>Yandex</th>
+</tr>
+
+<tr>
+<th>Correct visual rendering</th>
+<td>Pass</td>
+<td>Pass</td>
+<td>Pass</td>
+<td>Pass</td>
+<td>?</td>
+<td>Pass</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<th>Accessible name calculation</th>
+<td>Pass</td>
+<td>Pass</td>
+<td>Pass</td>
+<td>N/A</td>
+<td>?</td>
+<td>Pass</td>
+<td>Pass</td>
+</tr>
+</table>
 
 
 </body>
