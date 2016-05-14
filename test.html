@@ -15,11 +15,22 @@
 <h1>Test page</h1>
 
 
-<figure>
-<p>Lorem ipsum dolor sit amet...</p>
-<figcaption>Fig1. Latin text</figcaption>
-<p>...consectetur adipiscing</p>
-</figure>
+<form>
+
+<label for="a">Apples</label>
+<input type="text" id="a" aria-readonly="true">
+<br>
+
+<label for="b">Bananas</label>
+<input type="text" id="b" readonly>
+<br>
+
+<label for="c">Cherries</label>
+<input type="text" id="c" aria-readonly="true" readonly>
+<br>
+
+<input type="submit" value="Fruit">
+</form>
 
 </body>
 </html>
