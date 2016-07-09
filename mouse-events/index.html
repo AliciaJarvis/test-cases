@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Mouse events test case</title>
+
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<link rel="stylesheet" type="text/css" href="css/button.css">
+</head>
+
+<body>
+<h1>Mouse events test case</h1>
+
+
+<p>The button on this page is a <code>&lt;div&gt;</code> with <code>role=&quot;button&quot;</code>, with a <code>click</code> event listener.</p>
+
+<p>By default, the Jaws screen reader simulates a mouse click whenever the enter or space keys are used to activate a control. The "Link activation" setting can be set to "send enter key" instead, but this setting does not affect the behaviour of the space key - which will always simulate a mouse click whenever it's used.</p>
+
+<h2>Test button</h2>
+
+<div class="example">
+<div role="button" tabindex="0" id="button">Push</div>
+<p id="result"></p>
+</div>
+
+<script>
+function handleIt() {
+document.querySelector('#result').innerHTML = "Clicked";
+}
+
+document.getElementById('button').addEventListener('click', handleIt);
+</script>
+
+</body>
+</html>

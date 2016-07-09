@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SVG use test case</title>
+
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+</head>
+
+<body>
+<h1>SVG use test case</h1>
+
+
+<p>The SVG <a href="https://dev.w3.org/SVG/profiles/2.0/publish/single-page.html#concepts-Use"><code>&lt;use&gt;</code></a> element allows an object to be defined in one place, and reused in other places.</p>
+
+<h2>use with aria-labelledby and aria-describedby</h2>
+<div id="example">
+<svg width="750" height="500">
+<rect id="rect" aria-labelledby="title" aria-describedby="desc" x="0" y="0" width="100" height="75" style="fill: #820bbb;">
+<title id="title">Rectangle</title>
+<desc id="desc">Violet rectangle</desc>
+</rect>
+
+<use xlink:href="#rect" x="150" y="0" />
+</svg>
+
+</body>
+</html>

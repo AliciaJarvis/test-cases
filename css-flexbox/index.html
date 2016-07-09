@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width">
-<title>Case: Flexbox</title>
+<title>CSS FlexBox test case</title>
 
-<link rel="stylesheet" type="text/css" href="../css/basic.css">
+<link rel="stylesheet" type="text/css" href="css/basic.css">
 </head>
 
 <body>
-<h1>Case: Flexbox</h1>
+<h1>CSS FlexBox test case</h1>
+
+<p>The CSS <a href="https://www.w3.org/TR/2016/CR-css-flexbox-1-20160526/">FlexBox</a> module uses the <code>display:;</code> property and <a href="https://www.w3.org/TR/2016/CR-css-flexbox-1-20160526/#order-property"><code>order:;</code></a> property to impose a visual order on content that reflected in the DOM.</p>
 
 <h2>Basic HTML</h2>
 
-<div>
+<div class="example">
 <a href="/">One</a>
 <br>
 <a href="/">Two</a>
@@ -24,7 +27,7 @@
 
 <h2>With flexbox</h2>
 
-<div style="display: flex;">
+<div class="example" style="display: flex;">
 <a href="/" style="order: 3;">One</a>
 <br>
 <a href="/" style="order: 2;">Two</a>
@@ -34,7 +37,7 @@
 
 <h2>With flexbox and tabindex</h2>
 
-<div style="display: flex;">
+<div class="example" style="display: flex;">
 <a href="/" style="order: 3;" tabindex="3">One</a>
 <br>
 <a href="/" style="order: 2;" tabindex="2">Two</a>
@@ -43,17 +46,15 @@
 </div>
 
 
-
 <h2>With flexbox and aria-flowto</h2>
 
-<div style="display: flex;">
+<div class="example" style="display: flex;">
 <a href="/" style="order: 3;" id="i1">One</a>
 <br>
 <a href="/" style="order: 2;" id="i2" aria-flowto="i1">Two</a>
 <br>
 <a href="/" style="order: 1;" id="i3" aria-flowto="i2">Three</a>
 </div>
-
 
 </body>
 </html>
