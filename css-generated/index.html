@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<title>CSS generated content test case</title>
+
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<style>
+#a:after { content: 'bar'; }
+</style>
+</head>
+
+<body>
+<h1>CSS generated content test case</h1>
+
+<p>The CSS <a href="http://www.w3.org/TR/css3-selectors/#gen-content"><code>before/after</code></a> pseudo-selectors insert content without affecting the DOM.</p>
+
+<h2>before selector</h2>
+<p>Browsers should expose the link text "Fu" and the generated content "bar" as the link's accessible name, and screen readers should announce "Fubar".</p>
+<div class="example">
+<a href="/" id="a">Foo</a>
+</div>
+
+</body>
+</html>

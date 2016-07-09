@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aria-owns test case</title>
+
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+</head>
+
+<body><h1>aria-owns test case</h1>
+
+<p>The <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns"><code>aria-owns</code></a> attribute is used to establish a relationship between two elements, where none exists in the DOM.</p>
+
+<h2>Nested custom lists</h2>
+<p>The browser should expose two lists (one nested inside the other), with "Apples" and "Bananas" appearing as children of "Fruit".</p>
+<div class="example">
+<div role="list">
+<div role="listitem" aria-owns="fruit">Fruit</div>
+<div role="listitem">Vegetables</div>
+</div>
+
+<div role="list" id="fruit">
+<div role="listitem">Apples</div>
+<div role="listitem">Bananas</div>
+</div>
+</div>
+
+</body>
+</html>
