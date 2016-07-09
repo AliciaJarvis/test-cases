@@ -9,60 +9,90 @@
 
 <link rel="stylesheet" type="text/css" href="../css/basic.css">
 <style>
-[aria-current]:after {
-content: ' >>';
+.current {
+font-weight: bold;
+color: #ffffff;
+background-color: #820bbb;
 }
 </style>
 </head>
 
 <body>
-<header>
 <h1>aria-current test case</h1>
-</header>
 
-<p>The first link in each of the lists on this page uses the aria-current attribute, to indicate that it is the current item within the set.</p>
+<p>The <a href="https://www.w3.org/TR/2016/WD-wai-aria-1.1-20160317/#aria-current"><code>aria-current</code></a> attribute indicates the element that represents the current item within  a container or set of related elements. It is an enumerated type attribute that takes one of a number of predefined tokens ("page", "step", "location", "date" or "time"), or which may be set to "true".</p>
 
 <h2>aria-current="true"</h2>
+<p>Screen readers should announce "Current" to indicate the first link is the current link in the set.</p>
 <ul>
-<li><a href="/" aria-current="true">Apples</a></li>
+<li><a href="/" aria-current="true" class="current">Apples</a></li>
 <li><a href="/">Bananas</a></li>
 <li><a href="/">Cherries</a></li>
 </ul>
 
 <h2>aria-current="page"</h2>
+<p>Screen readers should announce "Current page" to indicate the first link is the current page in the navigation.</p>
+<nav>
 <ul>
-<li><a href="/" aria-current="page">Apples</a></li>
-<li><a href="/">Bananas</a></li>
-<li><a href="/">Cherries</a></li>
+<li><a href="/" aria-current="page" class="current">Home</a></li>
+<li><a href="/">About</a></li>
+<li><a href="/">Contact</a></li>
 </ul>
+</nav>
 
 <h2>aria-current="step"</h2>
+<p>Screen readers should announce "Current step" to indicate the first link is the current step in the process.</p>
 <ol>
-<li><a href="/" aria-current="step">Do this</a></li>
+<li><a href="/" aria-current="step" class="current">Do this</a></li>
 <li><a href="/">Do that</a></li>
 <li><a href="/">Do the other</a></li>
 </ol>
-</nav>
 
 <h2>aria-current="location"</h2>
+<p>Screen readers should announce "Current location" to indicate the last link is the current location in the breadcrumb navigation.</p>
+<nav aria-label="Breadcrumb">
 <ul>
-<li><a href="/" aria-current="location">United Kingdom</a></li>
-<li><a href="/">France</a></li>
-<li><a href="/">Spain</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/">> Contact us</a></li>
+<li><a href="/" aria-current="location" class="current">>> Phone numbers</a></li>
 </ul>
+</nav>
 
 <h2>aria-current="date"</h2>
-<ul>
-<li><a href="/" aria-current="date">1st July 2016</a></li>
-<li><a href="/">2nd July 2016</a></li>
-<li><a href="/">3rd July 2016</a></li>
-</ul>
+<p>Screen readers should announce "Current date" to indicate that Saturday 16th is the current date in the month.</p>
+<table>
+<caption>July 2016</caption>
+<tr>
+<th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+</tr>
+<tr>
+<td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+</tr>
+<tr>
+<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+</tr>
+<tr>
+<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td aria-current="date" class="current">16</td><td>17</td>
+</tr>
+<tr>
+<td>18</td><td>19</td><td>20</td><td>21</td><td>21</td><td>22</td><td>23</td><td>24</td>
+</tr>
+<tr>
+<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+</tr>
+</table>
 
 <h2>aria-current="time"</h2>
+<p>Screen readers should announce "Current time" to indicate the keynote is happening at the current time in the schedule.</p>
 <ul>
-<li><a href="/" aria-current="time">4pm</a></li>
-<li><a href="/">5pm</a></li>
-<li><a href="/">6pm</a></li>
+<li>9am to 10am: Welcome</li>
+<li aria-current="time" class="current">10am to 11am: Keynote</li>
+<li>11am to 11.30pm: Break</li>
+<li>11.30am to 1pm: Workshop</li>
+<li>1pm to 2pm: Lunch</li>
+<li>2pm to 3pm: Lecture</li>
+<li>3pm to 3.30pm: Break</li>
+<li>3.30pm to 5pm: Workshop</li>
 </ul>
 
 </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<title>aria-hidden test case</title>
+
+<link rel="stylesheet" type="text/css" href="css/basic.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css">
+</head>
+
+<body>
+<h1>aria-hidden test case</h1>
+
+When set to "true", the <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden"><code>aria-hidden</code></a> attribute removes the element from the accessibility tree. When applied to a <code>&lt;span&gt;</code> element inside  a <code>&lt;button&gt;</code> element, Firefox does not honour the hidden state of the <code>&lt;span&gt;</code>.</p>
+
+<h2>Inside a button</h2>
+<p>The browser should not include the <code>&lt;span&gt;</code> in the accessibility tree, and screen readers should not announce the "XXX" content of the <code>&lt;span&gt;</code> element.</p>
+<div class="example">
+<button>Foo <span aria-hidden="true">xxx</span></button>
+</div>
+
+<h2>Outside of a button</h2>
+<p>The browser should not include the <code>&lt;span&gt;</code> in the accessibility tree, and screen readers should not announce the "XXX" content of the <code>&lt;span&gt;</code> element.</p>
+<div class="example">
+Foo <span aria-hidden="true">xxx</span>
+</div>
+
+</body>
+</html>
