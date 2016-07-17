@@ -13,10 +13,10 @@
 <body>
 <h1>SVG use test case</h1>
 
-
 <p>The SVG <a href="https://dev.w3.org/SVG/profiles/2.0/publish/single-page.html#concepts-Use"><code>&lt;use&gt;</code></a> element allows an object to be defined in one place, and reused in other places.</p>
 
 <h2>use with aria-labelledby and aria-describedby</h2>
+<p>Browsers should expose the accessible name and description for the original SVG and the reused SVG. Screen readers should announce two graphics, each with "Rectangle" as its accessible name and "Violet rectangle" as its accessible description.</p>
 <div id="example">
 <svg width="750" height="500">
 <rect id="rect" aria-labelledby="title" aria-describedby="desc" x="0" y="0" width="100" height="75" style="fill: #820bbb;">
@@ -27,5 +27,131 @@
 <use xlink:href="#rect" x="150" y="0" />
 </svg>
 
+<h2>Results</h2>
+<p>Tested on 16th July 2016.</p>
+<table>
+<caption>Browser/screen reader results</caption>
+<tr>
+<th></th>
+<th colspan="3">Chrome</th>
+<th colspan="3">Edge</th>
+<th colspan="3">Firefox</th>
+<th colspan="3">Internet Explorer</th>
+<th colspan="3">Safari</th>
+</tr>
+
+<tr>
+<th></th>
+<th>Original SVG</th>
+<th>Reused SVG</th>
+<th>Notes</th>
+<th>Original SVG</th>
+<th>Reused SVG</th>
+<th>Notes</th>
+<th>Original SVG</th>
+<th>Reused SVG</th>
+<th>Notes</th>
+<th>Original SVG</th>
+<th>Reused SVG</th>
+<th>Notes</th>
+<th>Original SVG</th>
+<th>Reused SVG</th>
+<th>Notes</th>
+</tr>
+
+<tr>
+<th>Jaws</th>
+<td>Yes</td>
+<td>Yes</td>
+<td>Jaws bug means description is reported but not accessible</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>Yes</td>
+<td>No</td>
+<td>Original is announced by title only</td>
+
+<td>Yes</td>
+<td>Yes</td>
+<td>Original is announced by title only</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+
+
+<tr>
+<th>Narrator</th>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>Yes</td>
+<td>Yes</td>
+<td>Original is announced by title only</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>Yes</td>
+<td>No</td>
+<td>Original announced by title only</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<th>NVDA</th>
+<td>Yes</td>
+<td>Yes</td>
+<td>Original and Reused announced by title only</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>Yes</td>
+<td>Yes</td>
+<td>Original and reused announced by title only</td>
+
+<td>No</td>
+<td>Yes</td>
+<td>Reused announced by title only</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<th>VoiceOver (OSX)</th>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+
+<td>No</td>
+<td>No</td>
+<td></td>
+</tr>
+</table>
 </body>
 </html>
+
