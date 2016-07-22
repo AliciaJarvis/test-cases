@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Nested fieldsets test case</title>
+
+<link rel="stylesheet" type="text/css" href="../css/basic.css">
+</head>
+
+<body>
+<h1>Nested fieldsets test case</h1>
+
+<p>The HTML <a href="https://www.w3.org/TR/html51/"><code>&lt;fieldset&gt;</code></a> and <a href="https://www.w3.org/TR/html51/sec-forms.html#elementdef-legend"><code>&lt;legend&gt;</code></a> elements group together related fields, and provide a label for the group.</p>
+
+<h2>Test case</h2>
+<div class="example">
+<form>
+<fieldset>
+<legend>About you</legend>
+
+<div>
+<label for="name">Name</label>
+<br>
+<input type="text" id="name">
+</div>
+
+<div>
+<label for="email">Email</label>
+<br>
+<input type="email" id="email">
+</div>
+
+<fieldset>
+<legend>Your address</legend>
+
+<div>
+<label for="add1">Street</label>
+<br>
+<input type="text" id="add1">
+</div>
+
+<div>
+<label for="add2">City</label>
+<br>
+<input type="text" id="add2">
+</div>
+
+<div>
+<label for="post">Postcode</label>
+<br>
+<input type="text" id="post">
+</div>
+</fieldset>
+
+<div>
+<label for="tel">Phone</label>
+<br>
+<input type="tel" id="tel">
+</div>
+</fieldset>
+
+<div>
+<input type="submit" value="Sign up">
+</div>
+</form>
+</div>
+
+
+<h2>Test code</h2>
+<pre><code>
+&lt;form&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;About you&lt;/legend&gt;
+
+&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input type="text" id="name"&gt;
+
+&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email"&gt;
+
+&lt;fieldset&gt;
+&lt;legend&gt;Your address&lt;/legend&gt;
+
+&lt;label for="add1"&gt;Street&lt;/label&gt;
+&lt;input type="text" id="add1"&gt;
+
+&lt;label for="add2"&gt;City&lt;/label&gt;
+&lt;input type="text" id="add2"&gt;
+
+&lt;label for="post"&gt;Postcode&lt;/label&gt;
+&lt;input type="text" id="post"&gt;
+&lt;/fieldset&gt;
+
+&lt;label for="tel"&gt;Phone&lt;/label&gt;
+&lt;input type="tel" id="tel"&gt;
+&lt;/fieldset&gt;
+
+&lt;input type="submit" value="Sign up"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h2>Expected results</h2>
+<p>When a screen reader enters a fieldset for the first time, or returns to a fieldset, the legend should be announced folowed by the field and its label.</p>
+
+<p>In this test case the "About you" legend should be announced when focus moves to the "Name" field, the "Your address" legend should be announced when focus moves to the "Street" field, and the "About you" legend should be announced again when focus moves to the "Phone" field.</p>
+
+<p>Note: this assumes the tab key is being used to move forwards through the form.</p>
+
+<h2>Results</h2>
+<table>
+<caption>Screen reader support for nested fieldsets</caption>
+
+<tr>
+<th></th>
+<th>Chrome</th>
+<th>Notes</th>
+<th>Edge</th>
+<th>Notes</th>
+<th>Firefox</th>
+<th>Notes</th>
+<th>IE</th>
+<th>Notes</th>
+<th>Safari</th>
+<th>Notes</th>
+</tr>
+
+<tr>
+<th>Jaws</th>
+<td>Yes</td>
+<td>"About you" announced when "Phone" field receives focus</td>
+<td>N/A>
+<td></td>
+<td>No</td>
+<td>"About you" not announced when "Phone" field receives focus</td>
+<td>Yes</td>
+<td>"About you" is announced when "Phone" field receives focus</td>
+<td>N/A</td>
+<td></td>
+</tr>
+
+<tr>
+<th>Narrator</th>
+ <td>N/A</td>
+ <td></td>
+<td>No</td>
+<td>No legends announced</td>
+<td>N/A</td>
+<td></td>
+<td>No</td>
+<td>No legends announced</td>
+<td>N/A</td>
+<td></td>
+</tr>
+
+<tr>
+<th>NVDA</th>
+<td>No</td>
+<td>"About you" not announced when "Phone" field receives focus</td>
+<td>N/A</td>
+<td></td>
+<td>No</td>
+<td>"About you" not announced when "Phone" field receives focus</td>
+<td>No</td>
+<td>"About you" not announced when "Phone" field receives focus</td>
+<td>N/A</td>
+<td></td>
+</tr>
+
+<tr>
+<th>VoiceOver (OSX)</th>
+<td>N/A</td>
+<td></td>
+<td>N/A</td>
+<td></td>
+<td>N/A</td>
+<td></td>
+<td>N/A</td>
+<td></td>
+<td>?</td>
+<td></td>
+</tr>
+</table>
+
+</body>
+</html>
