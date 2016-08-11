@@ -15,19 +15,27 @@
 
 <p>The type attribute of the HTML <a href="http://w3c.github.io/html/sec-forms.html#the-input-element"><code>&lt;input&gt;</code></a> element determines the nature and characteristics of the control.</p>
 
-<h2>input + type="week"</h2>
+<h2 id="week">input + type="week"</h2>
 <div class="example"
 <form>
-<label for="week">Week</label>
-<input type="week" id="week">
+<label for="weekLabel">Week</label>
+<input type="week" id="weekLabel">
 </form>
 </div>
 
-<h2>input + type="month"</h2>
+<h2 id="month">input + type="month"</h2>
 <div class="example">
 <form>
-<label for="month">Month</label>
-<input type="month" id="month">
+<label for="monthLabel">Month</label>
+<input type="month" id="monthLabel">
+</form>
+</div>
+
+<h2 id="datetime">input + type="datetime-local"</h2>
+<div class="example">
+<form>
+<label for="datetimeLabel">Date and time</label>
+<input type="datetime-local" id="datetimeLabel">
 </form>
 </div>
 
@@ -44,8 +52,8 @@
 <th><a href="http://w3c.github.io/html/sec-forms.html#element-statedef-input-week">week</a></th>
 <td>Yes</td>
 <td>Yes</td>
-<td>?</td>
-<td>?</td>
+<td>No</td>
+<td>No</td>
 <td>?</td>
 </tr>
 
@@ -53,9 +61,18 @@
 <th><a href="http://w3c.github.io/html/sec-forms.html#element-statedef-input-month">month</a></th>
 <td>Yes</td>
 <td>Yes</td>
+<td>No</td>
+<td>No</td>
 <td>?</td>
-<td>?</td>
-<td>?</td>
+</tr>
+
+<tr>
+<th><a href="http://w3c.github.io/html/sec-forms.html#local-date-and-time-state-typedatetimelocal">datetime-local</a></th>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
 </tr>
 </table>
 
